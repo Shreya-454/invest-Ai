@@ -25,18 +25,33 @@ function setupVideoControls(videoId, playIconId) {
     const video = document.getElementById("Video");
     const playVideo = document.getElementById("playvedio");
     const videoContainer = document.getElementById("videoContainer");
+
+    // Play or pause video when the video container is clicked
     videoContainer.addEventListener("click", function () {
-        video.play();
-        playVideo.style.display = "none";
-    });
-    video.addEventListener("play", function () {
-        playVideo.style.display = "none"; 
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
     });
 
+    // Hide play button when video is playing
+    video.addEventListener("play", function () {
+        playVideo.style.display = "none";
+    });
+
+    // Show play button when video is paused or ended
     video.addEventListener("pause", function () {
         playVideo.style.display = "block";
     });
     video.addEventListener("ended", function () {
         playVideo.style.display = "block";
+    });
+
+    // Pause video when clicking anywhere else on the page
+    document.addEventListener("click", function (event) {
+        if (!videoContainer.contains(event.target) && !video.paused) {
+            video.pause();
+        }
     });
 });
