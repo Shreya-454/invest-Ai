@@ -33,7 +33,7 @@
 
 <body>
     <header class="relative z-10 bg-dark-black">
-            <video class="absolute top-0 left-0 w-full h-full object-cover opacity-30 -z-10" autoplay loop muted playsinline>
+            <video id="backgroundVideo" class="absolute top-0 left-0 w-full h-full object-cover opacity-30 -z-10" autoplay loop muted playsinline>
               <source src="/assets/videos/hero-bg.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -72,7 +72,6 @@
 
                     </div>
                 </div>
-
                 <div class="flex justify-center relative">
                     <video id="diligenceVideo"
                         class="rounded-md shadow-common_shadow lg:rounded-[24px] max-w-[982px] w-full max-h-[553px]"
@@ -124,15 +123,7 @@
                     world.</h2>
                 <div class="flex flex-col max-w-[827px] mx-auto">
                     <div class="flex items-start mb-3 md:mb-4 gap-3 xl:h- md:gap-5">
-                        <span class="size-[22px]">
-                            <svg class="w-4 md:w-6 h-3 md:h-4" viewBox="0 0 23 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.34922 16.8712L1.21641 9.7384C0.786719 9.30872 0.786719 8.57825 1.21641 8.14856L2.76328 6.60168C3.19297 6.172 3.88047 6.172 4.31016 6.60168L9.16563 11.4142L19.4781 1.10168C19.9078 0.671997 20.5953 0.671997 21.025 1.10168L22.5719 2.64856C23.0016 3.07825 23.0016 3.80872 22.5719 4.2384L9.93906 16.8712C9.50938 17.3009 8.77891 17.3009 8.34922 16.8712Z"
-                                    fill="#00A4FF" />
-                            </svg>
-
-                        </span>
+                        <img src="/assets/images/svg/check-mark.svg" alt="check-mark">
                         <p class="font-roboto font-normal text-lg lg:text-custom-md leading-140 text-white">Extremely
                             Easy Setup:
                             Get started in just (1
@@ -140,45 +131,20 @@
 
                     </div>
                     <div class="flex items-start mb-3 md:mb-4 gap-3 xl:h- md:gap-5">
-                        <span class="size-[22px]">
-                            <svg class="w-4 md:w-6 h-3 md:h-4" viewBox="0 0 23 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.34922 16.8712L1.21641 9.7384C0.786719 9.30872 0.786719 8.57825 1.21641 8.14856L2.76328 6.60168C3.19297 6.172 3.88047 6.172 4.31016 6.60168L9.16563 11.4142L19.4781 1.10168C19.9078 0.671997 20.5953 0.671997 21.025 1.10168L22.5719 2.64856C23.0016 3.07825 23.0016 3.80872 22.5719 4.2384L9.93906 16.8712C9.50938 17.3009 8.77891 17.3009 8.34922 16.8712Z"
-                                    fill="#00A4FF" />
-                            </svg>
-
-                        </span>
+                        <img src="/assets/images/svg/check-mark.svg" alt="check-mark">
                         <p class="font-roboto font-normal text-lg lg:text-custom-md leading-140 text-white">Highly
                             accuracy.: AI
                             Arbitrage achieves up to 93.2% daily accuracy.</p>
 
                     </div>
                     <div class="flex items-start mb-3 md:mb-4 gap-3 xl:h- md:gap-5">
-                        <span class="size-[22px]">
-                            <svg class="w-4 md:w-6 h-3 md:h-4" viewBox="0 0 23 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.34922 16.8712L1.21641 9.7384C0.786719 9.30872 0.786719 8.57825 1.21641 8.14856L2.76328 6.60168C3.19297 6.172 3.88047 6.172 4.31016 6.60168L9.16563 11.4142L19.4781 1.10168C19.9078 0.671997 20.5953 0.671997 21.025 1.10168L22.5719 2.64856C23.0016 3.07825 23.0016 3.80872 22.5719 4.2384L9.93906 16.8712C9.50938 17.3009 8.77891 17.3009 8.34922 16.8712Z"
-                                    fill="#00A4FF" />
-                            </svg>
-
-                        </span>
+                        <img src="/assets/images/svg/check-mark.svg" alt="check-mark">
                         <p class="font-roboto font-normal text-lg lg:text-custom-md leading-140 text-white">Real-Time:
                             Receive live
                             AI alerts.</p>
-
                     </div>
                     <div class="flex items-start mb-3 md:mb-4 gap-3 xl:h- md:gap-5">
-                        <span class="size-[22px]">
-                            <svg class="w-4 md:w-6 h-3 md:h-4" viewBox="0 0 23 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.34922 16.8712L1.21641 9.7384C0.786719 9.30872 0.786719 8.57825 1.21641 8.14856L2.76328 6.60168C3.19297 6.172 3.88047 6.172 4.31016 6.60168L9.16563 11.4142L19.4781 1.10168C19.9078 0.671997 20.5953 0.671997 21.025 1.10168L22.5719 2.64856C23.0016 3.07825 23.0016 3.80872 22.5719 4.2384L9.93906 16.8712C9.50938 17.3009 8.77891 17.3009 8.34922 16.8712Z"
-                                    fill="#00A4FF" />
-                            </svg>
-
-                        </span>
+                        <img src="/assets/images/svg/check-mark.svg" alt="check-mark">
                         <p class="font-roboto font-normal text-lg lg:text-custom-md leading-140 text-white">
                             Beginner-Friendly:
                             Perfect for those with zero experience.</p>
@@ -201,11 +167,7 @@
                     </div>
                     <button
                         class="rounded-full shadow-common_shadow hover:shadow-none duration-300 py-3 font-lato px-6 max-w-[236px] flex bg-blue mt-1 mb-16 md:mb-20 lg:mb-[97px] bg-opacity-[24%] border-light-blue items-center gap-4 mx-auto border border-solid font-bold text-center text-white text-xl lg:text-2xl leading-140">Get
-                        Started! <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.1719 0.709961C18.5938 0.709961 23.7969 5.91309 23.7969 12.335C23.7969 18.7568 18.5938 23.96 12.1719 23.96C5.75 23.96 0.546875 18.7568 0.546875 12.335C0.546875 5.91309 5.75 0.709961 12.1719 0.709961ZM17.5625 13.46C18.3594 13.0381 18.3594 11.96 17.5625 11.4912L9.3125 6.47559C8.5625 6.10059 7.67188 6.61621 7.67188 7.45996V17.21C7.67188 18.1006 8.5625 18.6162 9.3125 18.1943L17.5625 13.46Z"
-                                    fill="white" />
+                        Started! <span><img src="/assets/images/svg/play-button.svg" alt="play-button">
                             </svg>
                         </span> </button>
                 </div>

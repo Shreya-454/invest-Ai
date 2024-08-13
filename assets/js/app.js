@@ -55,18 +55,28 @@ playIcons.forEach(playIcon => {
         }
     });
 });
-document.addEventListener("DOMContentLoaded", function() {
-    const videos = document.querySelectorAll("video");
+// Get all video elements except the background video
+const videos = document.querySelectorAll("video:not(#backgroundVideo)");
 
-    videos.forEach((video) => {
-        video.addEventListener("play", () => {
-            videos.forEach((otherVideo) => {
-                if (otherVideo !== video) {
-                    otherVideo.pause();
-                }
-            });
-        });
+videos.forEach((video) => {
+  video.addEventListener("play", function() {
+    videos.forEach((otherVideo) => {
+      if (otherVideo !== video) {
+        otherVideo.pause();
+      }
     });
+  });
+
+  // Play/pause the video when clicking anywhere on the video element
+  video.addEventListener("click", function() {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
 });
 
-
+// The background video should continue playing independently
+const backgroundVideo = document.getElementById("backgroundVideo");
+backgroundVideo.play();
