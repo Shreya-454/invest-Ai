@@ -21,37 +21,33 @@ function setupVideoControls(videoId, playIconId) {
   }
   
   setupVideoControls("headVideo", "playIcon");
-  document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("Video");
-    const playVideo = document.getElementById("playvedio");
-    const videoContainer = document.getElementById("videoContainer");
+  
+  const playIcons = document.querySelectorAll('.pause-icon');
+let currentPlayingVideo = null;
 
-    // Play or pause video when the video container is clicked
-    videoContainer.addEventListener("click", function () {
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
+playIcons.forEach(playIcon => {
+    playIcon.addEventListener('click', function () {
+        const videoId = this.getAttribute('data-video-id');
+        const videoElement = document.getElementById(videoId);
+
+        if (currentPlayingVideo && currentPlayingVideo !== videoElement) {
+            currentPlayingVideo.pause();
+            currentPlayingVideo.currentTime = 0;
+            currentPlayingVideo.removeAttribute('controls'); // Hide controls
+            currentPlayingVideo.parentElement.querySelector('.pause-icon').style.display = 'block';
         }
-    });
 
-    // Hide play button when video is playing
-    video.addEventListener("play", function () {
-        playVideo.style.display = "none";
-    });
-
-    // Show play button when video is paused or ended
-    video.addEventListener("pause", function () {
-        playVideo.style.display = "block";
-    });
-    video.addEventListener("ended", function () {
-        playVideo.style.display = "block";
-    });
-
-    // Pause video when clicking anywhere else on the page
-    document.addEventListener("click", function (event) {
-        if (!videoContainer.contains(event.target) && !video.paused) {
-            video.pause();
+        if (videoElement.paused) {
+            videoElement.play();
+            videoElement.setAttribute('controls', 'true'); // Show controls
+            this.style.display = 'none';
+            currentPlayingVideo = videoElement;
+        } else {
+            videoElement.pause();
+            videoElement.currentTime = 0;
+            videoElement.removeAttribute('controls'); // Hide controls
+            this.style.display = 'block';
+            currentPlayingVideo = null;
         }
     });
 });
