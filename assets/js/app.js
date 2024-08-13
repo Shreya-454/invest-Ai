@@ -25,7 +25,6 @@ document.getElementById('playIcon').addEventListener('click', () => {
 
 
 // djhfbadjh
-
 const playIcons = document.querySelectorAll('.pause-icon');
 let currentPlayingVideo = null;
 
@@ -37,24 +36,25 @@ playIcons.forEach(playIcon => {
         if (currentPlayingVideo && currentPlayingVideo !== videoElement) {
             currentPlayingVideo.pause();
             currentPlayingVideo.currentTime = 0;
-            currentPlayingVideo.removeAttribute('controls'); // Hide controls
+            currentPlayingVideo.removeAttribute('controls');
             currentPlayingVideo.parentElement.querySelector('.pause-icon').style.display = 'block';
         }
 
         if (videoElement.paused) {
             videoElement.play();
-            videoElement.setAttribute('controls', 'true'); // Show controls
+            videoElement.setAttribute('controls', 'true');
             this.style.display = 'none';
             currentPlayingVideo = videoElement;
         } else {
             videoElement.pause();
             videoElement.currentTime = 0;
-            videoElement.removeAttribute('controls'); // Hide controls
+            videoElement.removeAttribute('controls');
             this.style.display = 'block';
             currentPlayingVideo = null;
         }
     });
 });
+
 // Get all video elements except the background video
 const videos = document.querySelectorAll("video:not(#backgroundVideo)");
 
